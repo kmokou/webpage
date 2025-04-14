@@ -1,0 +1,283 @@
+Skip to content
+You said:
+сделай это в виде страницы html, полностью повторив стиль и текст
+ChatGPT said:
+
+Готово! Я преобразовал постер в HTML-страницу с полным сохранением стиля и содержимого. Хочешь, чтобы я добавил адаптацию для мобильных устройств или включил стили в отдельный CSS-файл?
+You said:
+set backround instead of black background.png
+ChatGPT said:
+
+
+ChatGPT can make mistakes. Check important info.
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FaceShield — защита экрана от посторонних</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: url('background.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      padding: 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    h1 {
+      font-size: 2.8em;
+      font-weight: bold;
+      color: #fff;
+    }
+    .section {
+      background: rgba(26, 26, 26, 0.85);
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+    .highlight {
+      background: rgba(255, 0, 128, 0.85);
+      padding: 10px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      color: white;
+    }
+    h2 {
+      color: #ff0080;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .pie-chart {
+      width: 200px;
+      height: 200px;
+      background: conic-gradient(#ff0080 4%, #aaa 0);
+      border-radius: 50%;
+      margin: 20px auto;
+    }
+    .small {
+      font-size: 0.9em;
+      color: #ccc;
+    }
+    .link {
+      color: #80bfff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>FaceShield — защита экрана от посторонних</h1>
+
+    <div class="highlight">
+      <h2>ПРОБЛЕМА</h2>
+      <p>19 из 20 утечек происходит из-за человеческого фактора*, в том числе из-за оставленных без присмотра устройств.</p>
+      <p class="small">*Согласно результатам исследования IBM</p>
+    </div>
+
+    <div class="highlight">
+      <h2>РЕШЕНИЕ</h2>
+      <p>ПО, которое автоматически скрывает данные при отсутствии владельца перед экраном.</p>
+    </div>
+
+    <div class="section">
+      <h2>ЦЕЛЬ И ЗАДАЧИ</h2>
+      <ul>
+        <li>Анализ существующих решений</li>
+        <li>Разработка и реализация программы</li>
+        <li>Тестирование и доработка</li>
+      </ul>
+      <p>Цель — в процессе тестирования достичь не менее 95% успешных тестов</p>
+    </div>
+
+    <div class="section">
+      <h2>АНАЛИЗ РЕШЕНИЙ</h2>
+      <p>Решения по типу HP Sure View или Windows Hello имеют существенные недостатки:</p>
+      <ul>
+        <li>HP Sure View — защищает от подглядывания сбоку, но не от прямого взгляда.</li>
+        <li>Windows Hello — зависит непосредственно от владельца, а не его смартфона.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>ТЕСТИРОВАНИЕ</h2>
+      <ul>
+        <li>В тестах были задействованы разные углы обзора и условия освещения</li>
+        <li>48 из 50 тестов прошли успешно</li>
+        <li>Выявлена 1 α-ошибка и 2 β-ошибки</li>
+      </ul>
+      <div class="pie-chart"></div>
+      <p style="text-align:center">96% успешное срабатывание<br>4% ошибки</p>
+    </div>
+
+    <div class="section">
+      <h2>ТЕХНИЧЕСКАЯ РЕАЛИЗАЦИЯ</h2>
+      <p>Реализация основана на библиотеке DeepFace ввиду высокой точности распознавания (до 98,4%)</p>
+      <ul>
+        <li><strong>Язык:</strong> Python3</li>
+        <li><strong>Библиотеки:</strong> OpenCV, Tensorflow, DeepFace</li>
+        <li><strong>ОС:</strong> Linux, Windows</li>
+        <li><strong>Состав:</strong> установщик, ссылка на сайт с руководством и документацией</li>
+      </ul>
+      <a href="http://kmoku.ru/FaceShield" class="link">kmoku.ru/FaceShield</a>
+    </div>
+
+    <div class="section">
+      <h2>НОРМАТИВНЫЕ АКТЫ</h2>
+      <p>Закон №152-ФЗ "О персональных данных" соблюдается, так как пользователь при установке <strong>даёт согласие</strong> на локальное хранение и обработку его биометрических данных</p>
+    </div>
+
+    <div class="section">
+      <h2>ИСПОЛЬЗОВАНИЕ</h2>
+      <p>Решение актуально во многих общественных местах:</p>
+      <ul>
+        <li>Банковская сфера</li>
+        <li>Компьютерные клубы</li>
+        <li>Коворкинги, офисы</li>
+        <li>МФЦ, госучреждения</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
+ChatGPT is still generating a response...
