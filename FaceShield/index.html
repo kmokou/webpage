@@ -23,6 +23,7 @@
             font-family: 'Montserrat', sans-serif;
             text-transform: uppercase;
             color: white;
+            padding: 1rem;
         }
         
         .glow {
@@ -47,6 +48,14 @@
             align-items: center;
             justify-content: center;
             height: 100%;
+            width: 100%;
+            text-align: center;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            font-size: 0.875rem;
+            letter-spacing: 0.1em;
+            border: 2px solid transparent;
         }
         
         .btn-primary:hover {
@@ -60,37 +69,53 @@
             text-transform: none;
         }
         
-        .about-btn {
-            grid-column: 1 / -1;
-            margin: 0 auto;
-            width: 50%;
+        @media (max-width: 768px) {
+            .druk-font {
+                font-size: 3.5rem !important;
+                margin-bottom: 2rem !important;
+            }
+            
+            .tagline {
+                font-size: 1rem !important;
+                margin-bottom: 3rem !important;
+            }
+            
+            .btn-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+                max-width: 100% !important;
+            }
+            
+            .btn-primary {
+                padding: 0.75rem !important;
+            }
         }
     </style>
 </head>
-<body class="flex flex-col items-center justify-center p-8">
-    <div class="max-w-4xl w-full text-center">
+<body class="flex flex-col items-center justify-center">
+    <div class="w-full max-w-4xl px-4">
         <!-- Main Heading -->
-        <h1 class="druk-font text-6xl md:text-8xl lg:text-9xl font-bold mb-16 glow">
+        <h1 class="druk-font text-6xl md:text-8xl lg:text-9xl font-bold mb-16 glow text-center">
             FaceShield
         </h1>
         
         <!-- Tagline -->
-        <p class="text-lg md:text-xl mb-20 tracking-widest">
+        <p class="text-lg md:text-xl mb-20 tracking-widest text-center tagline">
             PROTECT YOUR DIGITAL IDENTITY
         </p>
         
         <!-- Buttons Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-            <a href="#" class="btn-primary py-4 px-6 rounded-lg font-bold text-sm tracking-widest">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto btn-grid">
+            <a href="#" class="btn-primary">
                 GitHub
             </a>
-            <a href="#" class="btn-primary py-4 px-6 rounded-lg font-bold text-sm tracking-widest">
+            <a href="#" class="btn-primary">
                 Руководство
             </a>
-            <a href="#" class="btn-primary py-4 px-6 rounded-lg font-bold text-sm tracking-widest">
+            <a href="#" class="btn-primary">
                 Политика конфиденциальности
             </a>
-            <a href="#" class="btn-primary py-4 px-6 rounded-lg font-bold text-sm tracking-widest">
+            <a href="#" class="btn-primary">
                 О программе
             </a>
         </div>
