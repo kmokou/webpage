@@ -88,11 +88,16 @@
         
         .btn-grid {
             transition: all 0.5s ease;
+            overflow: hidden;
+            height: auto;
         }
         
-        .fade-out {
+        .btn-grid.collapsed {
+            height: 0 !important;
             opacity: 0;
-            transform: scale(0.9);
+            transform: scale(0.95);
+            margin: 0;
+            padding: 0;
         }
         
         .content-text {
@@ -171,7 +176,7 @@
             </p>
         </div>
         <div class="mt-12 text-center content-text">
-            <a href="#" onclick="showPage('main-page')" class="btn-primary inline-block w-auto px-8 py-3">
+            <a href="#" onclick="returnToMain()" class="btn-primary inline-block w-auto px-8 py-3">
                 Back to Main
             </a>
         </div>
@@ -188,7 +193,7 @@
             </p>
         </div>
         <div class="mt-12 text-center content-text">
-            <a href="#" onclick="showPage('main-page')" class="btn-primary inline-block w-auto px-8 py-3">
+            <a href="#" onclick="returnToMain()" class="btn-primary inline-block w-auto px-8 py-3">
                 Back to Main
             </a>
         </div>
@@ -205,7 +210,7 @@
             </p>
         </div>
         <div class="mt-12 text-center content-text">
-            <a href="#" onclick="showPage('main-page')" class="btn-primary inline-block w-auto px-8 py-3">
+            <a href="#" onclick="returnToMain()" class="btn-primary inline-block w-auto px-8 py-3">
                 Back to Main
             </a>
         </div>
@@ -222,7 +227,7 @@
             </p>
         </div>
         <div class="mt-12 text-center content-text">
-            <a href="#" onclick="showPage('main-page')" class="btn-primary inline-block w-auto px-8 py-3">
+            <a href="#" onclick="returnToMain()" class="btn-primary inline-block w-auto px-8 py-3">
                 Back to Main
             </a>
         </div>
@@ -235,10 +240,10 @@
             const currentActive = document.querySelector('.active-page');
             const newPage = document.getElementById(pageId);
             
-            // Fade out buttons grid
-            buttonsGrid.classList.add('fade-out');
+            // Collapse button grid
+            buttonsGrid.classList.add('collapsed');
             
-            // After fade out completes, hide current page and show new one
+            // After collapse completes, hide current page and show new one
             setTimeout(() => {
                 // Hide current page
                 if (currentActive) {
@@ -259,6 +264,38 @@
             }, 500); // Match this duration with the CSS transition duration
         }
         
+        function returnToMain() {
+            // Get elements
+            const buttonsGrid = document.getElementById('buttons-grid');
+            const currentActive = document.querySelector('.active-page');
+            const mainPage = document.getElementById('main-page');
+            
+            // Hide all content texts in current page
+            const currentContentTexts = currentActive.querySelectorAll('.content-text');
+            currentContentTexts.forEach(text => {
+                text.classList.remove('show-text');
+            });
+            
+            // Hide current page
+            currentActive.classList.remove('active-page');
+            
+            // Show main page
+            mainPage.classList.add('active-page');
+            
+            // Expand button grid after a small delay
+            setTimeout(() => {
+                buttonsGrid.classList.remove('collapsed');
+            }, 100);
+            
+            // Show text elements with delay
+            setTimeout(() => {
+                const contentTexts = mainPage.querySelectorAll('.content-text');
+                contentTexts.forEach(text => {
+                    text.classList.add('show-text');
+                });
+            }, 600);
+        }
+        
         // Initialize content text animations when pages load
         document.addEventListener('DOMContentLoaded', function() {
             // Show main page content immediately
@@ -270,12 +307,20 @@
                 });
             }
             
-            // Set up back button functionality
+            // Set up button functionality
             document.querySelectorAll('[onclick^="showPage"]').forEach(button => {
                 button.addEventListener('click', function(e) {
                     e.preventDefault();
                     const pageId = this.getAttribute('onclick').match(/'([^']+)'/)[1];
                     showPage(pageId);
+                });
+            });
+            
+            // Set up back button functionality
+            document.querySelectorAll('[onclick="returnToMain()"]').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    returnToMain();
                 });
             });
         });
