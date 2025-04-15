@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FaceShield</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'DrukTextWide';
+            src: url('https://github.com/kmokou/webpage/raw/refs/heads/main/FaceShield/DrukTextWide.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        body {
+            background-image: url('https://github.com/kmokou/webpage/blob/main/FaceShield/background.png?raw=true');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            min-height: 100vh;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            color: white;
+        }
+        
+        .glow {
+            text-shadow: 0 0 3px white, 0 0 6px white;
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 3px white, 0 0 6px white;
+            }
+            to {
+                text-shadow: 0 0 5px white, 0 0 9px white;
+            }
+        }
+        
+        .btn-primary {
+            background-color: #F6339A;
+            color: black;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+        
+        .btn-primary:hover {
+            background-color: transparent;
+            color: #F6339A;
+            border: 2px solid #F6339A;
+        }
+        
+        .druk-font {
+            font-family: 'DrukTextWide', sans-serif;
+            text-transform: none;
+        }
+        
+        .about-btn {
+            grid-column: 1 / -1;
+            margin: 0 auto;
+            width: 50%;
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center p-8">
+    <div class="max-w-4xl w-full text-center">
+        <!-- Main Heading -->
+        <h1 class="druk-font text-6xl md:text-8xl lg:text-9xl font-bold mb-16 glow">
+            FaceShield
+        </h1>
+        
+        <!-- Tagline -->
+        <p class="text-lg md:text-xl mb-20 tracking-widest">
+            PROTECT YOUR DIGITAL IDENTITY
+        </p>
+        
+        <!-- Buttons Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            <a href="#" class="btn-primary py-4 px-6 rounded-lg font-bold text-sm tracking-widest">
+                GitHub
+            </a>
+            <a href="#" class="btn-primary py-4 px-6 rounded-lg font-bold text-sm tracking-widest">
+                Руководство
+            </a>
+            <a href="#" class="btn-primary py-4 px-6 rounded-lg font-bold text-sm tracking-widest">
+                Политика конфиденциальности
+            </a>
+            <a href="#" class="btn-primary py-4 px-6 rounded-lg font-bold text-sm tracking-widest">
+                О программе
+            </a>
+        </div>
+    </div>
+</body>
+</html>
