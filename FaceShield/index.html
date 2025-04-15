@@ -69,29 +69,41 @@
             text-transform: none;
         }
         
-        .typing-text {
-            border-right: 2px solid #F6339A;
-            white-space: nowrap;
-            overflow: hidden;
-            width: 0;
-            animation: typing 1s steps(40, end) forwards;
-        }
-        
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-        
         .highlight {
             color: #F6339A;
         }
         
         .page-content {
             display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
         }
         
         .active-page {
             display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .btn-grid {
+            transition: all 0.5s ease;
+        }
+        
+        .fade-out {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+        
+        .content-text {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease 0.3s, transform 0.5s ease 0.3s;
+        }
+        
+        .show-text {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         @media (max-width: 768px) {
@@ -132,7 +144,7 @@
         </p>
         
         <!-- Buttons Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto btn-grid">
+        <div id="buttons-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto btn-grid">
             <a href="#" onclick="showPage('github-page')" class="btn-primary">
                 GitHub
             </a>
@@ -150,18 +162,15 @@
     
     <!-- GitHub Page -->
     <div id="github-page" class="w-full max-w-4xl px-4 page-content">
-        <h1 class="druk-font text-3xl md:text-4xl font-bold mb-8 text-center">
-            FaceShield
-        </h1>
-        <div class="text-center mt-16">
-            <p class="typing-text text-lg md:text-xl max-w-2xl mx-auto">
+        <div class="text-center mt-16 content-text">
+            <p class="text-lg md:text-xl max-w-2xl mx-auto">
                 FaceShield is available on <span class="highlight">GitHub</span> as an open-source project. 
                 You can contribute, report issues, or download the latest version from our 
                 <span class="highlight">repository</span>. Our community is growing and we welcome all 
                 <span class="highlight">developers</span> who want to help improve digital privacy.
             </p>
         </div>
-        <div class="mt-12 text-center">
+        <div class="mt-12 text-center content-text">
             <a href="#" onclick="showPage('main-page')" class="btn-primary inline-block w-auto px-8 py-3">
                 Back to Main
             </a>
@@ -170,18 +179,15 @@
     
     <!-- Guide Page -->
     <div id="guide-page" class="w-full max-w-4xl px-4 page-content">
-        <h1 class="druk-font text-3xl md:text-4xl font-bold mb-8 text-center">
-            FaceShield
-        </h1>
-        <div class="text-center mt-16">
-            <p class="typing-text text-lg md:text-xl max-w-2xl mx-auto">
+        <div class="text-center mt-16 content-text">
+            <p class="text-lg md:text-xl max-w-2xl mx-auto">
                 Our comprehensive <span class="highlight">guide</span> will help you get started with FaceShield. 
                 Learn how to <span class="highlight">protect</span> your digital identity with our 
                 step-by-step instructions. The guide covers <span class="highlight">installation</span>, 
                 configuration, and advanced features to maximize your <span class="highlight">privacy</span>.
             </p>
         </div>
-        <div class="mt-12 text-center">
+        <div class="mt-12 text-center content-text">
             <a href="#" onclick="showPage('main-page')" class="btn-primary inline-block w-auto px-8 py-3">
                 Back to Main
             </a>
@@ -190,18 +196,15 @@
     
     <!-- Privacy Policy Page -->
     <div id="privacy-page" class="w-full max-w-4xl px-4 page-content">
-        <h1 class="druk-font text-3xl md:text-4xl font-bold mb-8 text-center">
-            FaceShield
-        </h1>
-        <div class="text-center mt-16">
-            <p class="typing-text text-lg md:text-xl max-w-2xl mx-auto">
+        <div class="text-center mt-16 content-text">
+            <p class="text-lg md:text-xl max-w-2xl mx-auto">
                 Your <span class="highlight">privacy</span> is our top priority. FaceShield's 
                 <span class="highlight">privacy policy</span> explains how we collect, use, and 
                 protect your data. We <span class="highlight">never</span> store sensitive information 
                 and all processing happens <span class="highlight">locally</span> on your device.
             </p>
         </div>
-        <div class="mt-12 text-center">
+        <div class="mt-12 text-center content-text">
             <a href="#" onclick="showPage('main-page')" class="btn-primary inline-block w-auto px-8 py-3">
                 Back to Main
             </a>
@@ -210,18 +213,15 @@
     
     <!-- About Page -->
     <div id="about-page" class="w-full max-w-4xl px-4 page-content">
-        <h1 class="druk-font text-3xl md:text-4xl font-bold mb-8 text-center">
-            FaceShield
-        </h1>
-        <div class="text-center mt-16">
-            <p class="typing-text text-lg md:text-xl max-w-2xl mx-auto">
+        <div class="text-center mt-16 content-text">
+            <p class="text-lg md:text-xl max-w-2xl mx-auto">
                 FaceShield was created to <span class="highlight">empower</span> users in the digital age. 
                 Our mission is to provide <span class="highlight">accessible</span> privacy tools for everyone. 
                 The project is developed by a <span class="highlight">dedicated</span> team of privacy advocates 
                 and <span class="highlight">security</span> experts.
             </p>
         </div>
-        <div class="mt-12 text-center">
+        <div class="mt-12 text-center content-text">
             <a href="#" onclick="showPage('main-page')" class="btn-primary inline-block w-auto px-8 py-3">
                 Back to Main
             </a>
@@ -230,33 +230,55 @@
 
     <script>
         function showPage(pageId) {
-            // Hide all pages
-            document.querySelectorAll('.page-content').forEach(page => {
-                page.classList.remove('active-page');
-            });
+            // Get elements
+            const buttonsGrid = document.getElementById('buttons-grid');
+            const currentActive = document.querySelector('.active-page');
+            const newPage = document.getElementById(pageId);
             
-            // Show the selected page
-            document.getElementById(pageId).classList.add('active-page');
+            // Fade out buttons grid
+            buttonsGrid.classList.add('fade-out');
             
-            // Reset and restart typing animation
-            const typingElements = document.querySelectorAll('.typing-text');
-            typingElements.forEach(element => {
-                element.style.width = '0';
+            // After fade out completes, hide current page and show new one
+            setTimeout(() => {
+                // Hide current page
+                if (currentActive) {
+                    currentActive.classList.remove('active-page');
+                }
+                
+                // Show new page
+                newPage.classList.add('active-page');
+                
+                // Show text elements with delay
                 setTimeout(() => {
-                    element.style.width = '100%';
+                    const contentTexts = newPage.querySelectorAll('.content-text');
+                    contentTexts.forEach(text => {
+                        text.classList.add('show-text');
+                    });
                 }, 100);
-            });
-            
-            return false;
+                
+            }, 500); // Match this duration with the CSS transition duration
         }
         
-        // Initialize typing animation on page load
-        window.onload = function() {
-            const typingElements = document.querySelectorAll('.typing-text');
-            typingElements.forEach(element => {
-                element.style.width = '100%';
+        // Initialize content text animations when pages load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Show main page content immediately
+            const mainPage = document.getElementById('main-page');
+            if (mainPage.classList.contains('active-page')) {
+                const contentTexts = mainPage.querySelectorAll('.content-text');
+                contentTexts.forEach(text => {
+                    text.classList.add('show-text');
+                });
+            }
+            
+            // Set up back button functionality
+            document.querySelectorAll('[onclick^="showPage"]').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const pageId = this.getAttribute('onclick').match(/'([^']+)'/)[1];
+                    showPage(pageId);
+                });
             });
-        };
+        });
     </script>
 </body>
 </html>
