@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ДУРКА | Знакомства. Правила.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'DrukTextWide';
+            src: url('DrukTextWide-Bold.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+        body {
+            background: url('background.png') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #e5e5e5;
+        }
+        .header-black {
+            background-color: #000000;
+        }
+        .rule-item {
+            transition: all 0.2s ease;
+        }
+        .rule-item:hover {
+            transform: translateX(5px);
+        }
+        .quote-box {
+            border-left: 4px solid #ff00d4;
+            background-color: rgba(255, 0, 212, 0.1);
+        }
+        .footer-link {
+            transition: color 0.2s ease;
+        }
+        .footer-link:hover {
+            color: #ff00d4;
+        }
+        .rule-number {
+            background: linear-gradient(135deg, #ff0099 0%, #ff00d4 100%);
+            color: white;
+        }
+        .content-box {
+            background-color: #1a1a1a;
+            border: 1px solid #2d2d2d;
+        }
+        .druk-text {
+            font-family: 'DrukTextWide', sans-serif;
+            text-transform: uppercase;
+        }
+        .rule-container {
+            display: flex;
+            align-items: center;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Header -->
+        <div class="header-black rounded-xl shadow-lg p-6 mb-8 text-white">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-3xl druk-text">ДУРКА | Знакомства</h1> 
+                </div>
+                <div>
+                    <h1 class="text-3xl druk-text">Правила</h1>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="content-box rounded-xl shadow-md p-6 mb-8">
+            <div class="quote-box p-4 mb-6 rounded-r-lg">
+                <p class="italic">Данный свод правил относится к телеграмм боту от сообщества ДУРКА - Знакомства. За нарушение какого-либо пункта ваша анкета будет заблокирована.</p>
+            </div>
+
+            <div class="space-y-5">
+                <div class="rule-item">
+                    <div class="rule-container">
+                        <div class="rule-number rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">
+                            <span>1</span>
+                        </div>
+                        <p>Распространение NSFW материала (<em class="text-gray-400">порнография, материал с содержанием насилия, убийств и прочих подобных вещей</em>)</p>
+                    </div>
+                </div>
+
+                <div class="rule-item">
+                    <div class="rule-container">
+                        <div class="rule-number rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">
+                            <span>2</span>
+                        </div>
+                        <p>Призыв к любым сексуальным действиям (<em class="text-gray-400">осторожнее с шутками, админы их не всегда понимают</em>)</p>
+                    </div>
+                </div>
+
+                <div class="rule-item">
+                    <div class="rule-container">
+                        <div class="rule-number rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">
+                            <span>3</span>
+                        </div>
+                        <p>Рекламный характер анкеты (<em class="text-gray-400">услуги, телеграмм каналы, сторонние источники и прочее</em>)</p>
+                    </div>
+                </div>
+
+                <div class="rule-item">
+                    <div class="rule-container">
+                        <div class="rule-number rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">
+                            <span>4</span>
+                        </div>
+                        <p>Оскорбительные анкеты</p>
+                    </div>
+                </div>
+
+                <div class="rule-item">
+                    <div class="rule-container">
+                        <div class="rule-number rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">
+                            <span>5</span>
+                        </div>
+                        <p>Любая попытка нарушения работоспособности бота</p>
+                    </div>
+                </div>
+
+                <div class="rule-item">
+                    <div class="rule-container">
+                        <div class="rule-number rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">
+                            <span>6</span>
+                        </div>
+                        <p>Экстремистский и дискриминационный контент (<em class="text-gray-400">провокация по любым признакам</em>)</p>
+                    </div>
+                </div>
+
+                <div class="rule-item">
+                    <div class="rule-container">
+                        <div class="rule-number rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">
+                            <span>7</span>
+                        </div>
+                        <p>Деанон* без соглашения пользователя</p>
+                    </div>
+                </div>
+
+                <div class="ml-12 mb-4 text-sm text-gray-400">
+                    <p><em>Деанон*</em> - распространение личной информации пользователя без его согласия</p>
+                </div>
+
+                <div class="rule-item">
+                    <div class="rule-container">
+                        <div class="rule-number rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">
+                            <span>8</span>
+                        </div>
+                        <p>Мошенничество (<em class="text-gray-400">выдача себя за другое лицо, денежное мошенничество и подобное</em>)</p>
+                    </div>
+                </div>
+
+                <div class="rule-item">
+                    <div class="rule-container">
+                        <div class="rule-number rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">
+                            <span>9</span>
+                        </div>
+                        <p>Ваша анкета не должна нарушать <a href="https://telegram.org/tos?setln=ru" target="_blank" class="text-pink-400 hover:underline">Telegram TOS</a> (<em class="text-gray-400">нажмите для ознакомления</em>)</p>
+                    </div>
+                </div>
+
+                <div class="rule-item">
+                    <div class="rule-container">
+                        <div class="rule-number rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">
+                            <span>10</span>
+                        </div>
+                        <p>Данные пользователей хранятся в зашифрованном виде</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 text-gray-300">
+                <p>Будьте осторожны в случае назначения встречи в жизни. На первой встрече будьте аккуратны и осознавайте риск. Проводите встречу в людном месте и не совершайте глупостей. <strong class="text-pink-400">Только вы отвечаете за себя</strong>.</p>
+            </div>
+
+            <div class="quote-box p-4 mt-6 rounded-r-lg">
+                <p class="italic">Помните, администрация вправе заблокировать вас и по другим причинам, не указанным в данном списке. Свод правил лишь руководство для пользователей.</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center text-gray-500 text-sm">
+            <p>ДУРКА © 2025</p>
+            <div class="flex justify-center space-x-4 mt-2">
+                <a href="https://t.me/durka_public" class="footer-link hover:text-pink-400"><i class="fab fa-telegram"></i></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
