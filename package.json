@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://kmoku.ru",
+  "homepage": "https://kmokou.github.io/webpage/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
