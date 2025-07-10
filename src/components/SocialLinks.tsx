@@ -9,11 +9,6 @@ const SocialLinks = () => {
       name: 'GitHub', 
       url: 'https://github.com/kmokou',
       icon: '' // This is the actual glyph for GitHub (nf-fa-github)
-    },
-    {
-      name: 'VK',
-      url: 'https://vk.com/kmoku', 
-      icon: '' // This is the actual glyph for VK (nf-fa-vk)
     }
   ];
 
