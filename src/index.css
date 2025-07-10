@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Hack Nerd Font';
+  src: url('/lovable-uploads/HackNerdFont-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Pixel-art visiting card design system for kmoku
+All colors MUST be HSL and follow the pastel palette theme.
+*/
+
+@layer base {
+  :root {
+    /* Pastel light mode palette */
+    --background: 330 100% 95%; /* Pale pink background */
+    --foreground: 280 15% 25%; /* Dark purple text */
+
+    --card: 0 0% 100%; /* White UI panels */
+    --card-foreground: 280 15% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 280 15% 25%;
+
+    --primary: 320 50% 70%; /* Soft pink primary */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 30% 85%; /* Soft blue secondary */
+    --secondary-foreground: 280 15% 25%;
+
+    --muted: 240 20% 90%; /* Very light purple */
+    --muted-foreground: 280 10% 45%;
+
+    --accent: 120 40% 80%; /* Soft mint green */
+    --accent-foreground: 280 15% 25%;
+
+    --destructive: 0 70% 75%; /* Soft red */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 280 20% 85%; /* Pastel purple border */
+    --input: 280 20% 85%;
+    --ring: 320 50% 70%;
+
+    --radius: 0rem; /* Sharp pixel edges */
+
+    /* Pixel-specific colors */
+    --pixel-sakura: 330 80% 85%; /* Sakura petal color */
+    --pixel-grass: 120 60% 75%; /* Soft grass green */
+    --pixel-sky: 210 60% 90%; /* Light blue sky */
+    --pixel-shadow: 280 20% 80%; /* Soft shadow */
+
+    /* Animation colors */
+    --glow-primary: 320 50% 70%;
+    --glow-accent: 120 40% 80%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Muted violet dark mode palette */
+    --background: 280 40% 12%; /* Dark violet background */
+    --foreground: 300 20% 85%; /* Light purple text */
+
+    --card: 280 30% 15%; /* Dark panels */
+    --card-foreground: 300 20% 85%;
+
+    --popover: 280 30% 15%;
+    --popover-foreground: 300 20% 85%;
+
+    --primary: 320 60% 75%; /* Bright pink primary */
+    --primary-foreground: 280 40% 12%;
+
+    --secondary: 210 40% 70%; /* Warm blue secondary */
+    --secondary-foreground: 280 40% 12%;
+
+    --muted: 280 20% 20%; /* Dark purple muted */
+    --muted-foreground: 300 15% 65%;
+
+    --accent: 120 50% 70%; /* Bright mint accent */
+    --accent-foreground: 280 40% 12%;
+
+    --destructive: 0 70% 70%; /* Bright red */
+    --destructive-foreground: 280 40% 12%;
+
+    --border: 280 30% 25%; /* Dark purple border */
+    --input: 280 30% 25%;
+    --ring: 320 60% 75%;
+
+    /* Dark mode pixel colors */
+    --pixel-sakura: 330 70% 80%; /* Brighter sakura for contrast */
+    --pixel-grass: 120 50% 60%; /* Darker grass */
+    --pixel-sky: 210 40% 25%; /* Dark sky */
+    --pixel-shadow: 280 40% 18%; /* Darker shadow */
+
+    /* Dark mode glow */
+    --glow-primary: 320 60% 75%;
+    --glow-accent: 120 50% 70%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    image-rendering: pixelated; /* Make all images pixel-perfect */
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    transition: color 0.7s ease, background-color 0.7s ease, border-color 0.7s ease;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Press Start 2P', monospace;
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: background 0.7s ease;
+  }
+
+  /* Pixel-perfect text rendering */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Press Start 2P', monospace;
+    line-height: 1.4;
+  }
+}
+
+@layer components {
+  /* Pixel button component */
+  .pixel-button {
+    @apply relative inline-block px-6 py-3 bg-card text-card-foreground border-2 border-border;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 12px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    box-shadow: 4px 4px 0px hsl(var(--pixel-shadow));
+  }
+
+  .pixel-button:hover {
+    @apply bg-primary text-primary-foreground;
+    box-shadow: 2px 2px 0px hsl(var(--pixel-shadow));
+    transform: translate(2px, 2px);
+  }
+
+  .pixel-button:active {
+    @apply bg-accent text-accent-foreground;
+    box-shadow: 0px 0px 0px hsl(var(--pixel-shadow));
+    transform: translate(4px, 4px);
+  }
+
+  /* Theme toggle button */
+  .theme-toggle {
+    @apply fixed top-4 right-4 z-50 w-12 h-12 bg-card border-2 border-border;
+    box-shadow: 3px 3px 0px hsl(var(--pixel-shadow));
+    transition: all 0.2s ease;
+  }
+
+  .theme-toggle:hover {
+    @apply bg-primary;
+    box-shadow: 1px 1px 0px hsl(var(--pixel-shadow));
+    transform: translate(2px, 2px);
+  }
+
+  /* Pixel panel for content */
+  .pixel-panel {
+    @apply bg-card border-2 border-border p-6;
+    box-shadow: 6px 6px 0px hsl(var(--pixel-shadow));
+  }
+
+
+  @keyframes blink-caret {
+    from, to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: hsl(var(--primary));
+    }
+  }
+
+  /* Bounce animation for buttons */
+  .bounce-hover:hover {
+    animation: bounce 0.6s ease-in-out;
+  }
+
+  /* Pixel glow effect */
+  .pixel-glow {
+    box-shadow: 
+      0 0 10px hsl(var(--glow-primary)),
+      0 0 20px hsl(var(--glow-primary)),
+      0 0 30px hsl(var(--glow-primary));
+  }
+
+  /* Falling petal animation */
+  .falling-petal {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: hsl(var(--pixel-sakura));
+    border-radius: 0;
+    opacity: 0.8;
+    pointer-events: none;
+    animation: fall linear infinite;
+  }
+
+  @keyframes fall {
+    0% {
+      transform: translateY(-100vh) translateX(0px) rotate(0deg);
+      opacity: 1;
+    }
+    25% {
+      transform: translateY(-50vh) translateX(var(--random-drift-1, 20px)) rotate(90deg);
+      opacity: 0.8;
+    }
+    50% {
+      transform: translateY(0vh) translateX(var(--random-drift-2, -15px)) rotate(180deg);
+      opacity: 0.6;
+    }
+    75% {
+      transform: translateY(50vh) translateX(var(--random-drift-3, 25px)) rotate(270deg);
+      opacity: 0.4;
+    }
+    100% {
+      transform: translateY(100vh) translateX(var(--random-drift-1, -10px)) rotate(360deg);
+      opacity: 0;
+    }
+  }
+  /* Blinking cursor animation */
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+
+  .blinking-cursor {
+    animation: blink 1s infinite;
+    margin-left: 0.1em;
+  }
+
+  .nerd-font {
+    font-family: 'Hack Nerd Font', monospace;
+    transform: translateX(-3px);
+  }
+}
